@@ -1,6 +1,13 @@
-# Team Task Manager
+# SyncFlow — Premium Collaborative Task Hub
 
-A professional, role-based, full-stack collaborative task management application (inspired by Trello/Jira-lite). Built with a Django REST Framework backend and a React + Tailwind CSS frontend. Ready for zero-config production deployment on Railway (Backend + PostgreSQL) and Vercel (Frontend).
+A professional, role-based, full-stack collaborative task management application (inspired by Trello/Jira-lite). Built with a Django REST Framework backend and a React + Tailwind CSS frontend.
+
+### 🌐 Live Deployment Links
+*   **Frontend Client (Vercel):** [https://sync-flow-eight.vercel.app/](https://sync-flow-eight.vercel.app/)
+*   **API Service (Railway):** [https://syncflow-production-22d7.up.railway.app/](https://syncflow-production-22d7.up.railway.app/)
+*   **Workspace Admin Console:** [https://syncflow-production-22d7.up.railway.app/admin/](https://syncflow-production-22d7.up.railway.app/admin/)
+
+---
 
 ## Features
 
