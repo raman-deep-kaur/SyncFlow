@@ -135,7 +135,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 if os.environ.get('FRONTEND_URL'):
-    CORS_ALLOWED_ORIGINS.append(os.environ.get('FRONTEND_URL'))
+    CORS_ALLOWED_ORIGINS.append(os.environ.get('FRONTEND_URL').rstrip('/'))
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
