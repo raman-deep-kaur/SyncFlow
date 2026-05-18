@@ -2,7 +2,7 @@
 
 A professional, role-based, full-stack collaborative task management application (inspired by Trello/Jira-lite). Built with a Django REST Framework backend and a React + Tailwind CSS frontend.
 
-### 🌐 Live Deployment Links
+### Live Deployment Links
 *   **Frontend Client (Vercel):** [https://sync-flow-eight.vercel.app/](https://sync-flow-eight.vercel.app/)
 *   **API Service (Railway):** [https://syncflow-production-22d7.up.railway.app/](https://syncflow-production-22d7.up.railway.app/)
 *   **Workspace Admin Console:** [https://syncflow-production-22d7.up.railway.app/admin/](https://syncflow-production-22d7.up.railway.app/admin/)
@@ -113,38 +113,3 @@ npm run dev
 
 The frontend will run at `http://localhost:5173/`. Open it in your browser and log in with your superuser credentials!
 
----
-
-## Production Deployment Guide
-
-### Backend Deploy (Railway + PostgreSQL)
-
-1. **Database Setup**: Create a new project in [Railway](https://railway.app) and provision a **PostgreSQL** database. This automatically provides a `DATABASE_URL` environment variable.
-2. **App Deployment**: Connect your backend Git repository to Railway.
-3. **Environment Variables**: In your Railway app dashboard settings under **Variables**, set:
-   - `SECRET_KEY` = `your-custom-production-secret`
-   - `DEBUG` = `False`
-4. **Deploy & Migrate**: Railway will automatically build and run your Django app using the `Procfile` (`web: gunicorn config.wsgi`). Run the final migrations on Railway by opening the Railway console or linking your terminal and executing:
-   ```bash
-   python manage.py migrate
-   python manage.py createsuperuser
-   ```
-
-### Frontend Deploy (Vercel)
-
-1. Open [Vercel](https://vercel.com) and click **Import Project**.
-2. Select your frontend Git repository.
-3. **API Endpoint Configuration**: Before deploying, make sure to change the `baseURL` inside `frontend/src/services/api.js` to point to your live Railway API backend:
-   ```javascript
-   const API = axios.create({
-     baseURL: 'https://your-railway-app-url.up.railway.app/api/'
-   })
-   ```
-4. **CORS Security**: Ensure you add your newly assigned Vercel URL to the `CORS_ALLOWED_ORIGINS` inside `backend/config/settings.py` so the backend securely accepts requests:
-   ```python
-   CORS_ALLOWED_ORIGINS = [
-       'http://localhost:5173',
-       'https://your-vercel-app-url.vercel.app',
-   ]
-   ```
-5. Click **Deploy**!
