@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+body {
+  background-color: #080c14; /* Extremely premium dark slate bg */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1527;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glowing text classes */
+.glow-text-primary {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Animation utilities */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
